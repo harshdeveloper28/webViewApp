@@ -1,20 +1,24 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
 import { WebView } from 'react-native-webview';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
+    // 1. Use SafeAreaView to automatically handle the top notch/status bar overlap
+    <SafeAreaView style={styles.container} edges={['top']}>
+      <StatusBar barStyle="light-content" backgroundColor="#202124" />
       <WebView 
         source={{ uri: 'https://www.google.com' }} 
-        style={styles.webview}
-        startInLoadingState={true}
+        style={styles.webview} 
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#000'  , marginTop:40},
+  container: { 
+    flex: 1, 
+    backgroundColor: '#202124' // Ensures the safe area matches your dark theme
+  },
   webview: { flex: 1 },
 });
