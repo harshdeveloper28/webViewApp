@@ -8,7 +8,6 @@ export default function HomeScreen() {
       <WebView 
         source={{ uri: 'https://www.google.com' }} 
         style={styles.webview}
-        // Optional: shows loading state until the web page is ready
         startInLoadingState={true}
       />
     </View>

@@ -3,7 +3,7 @@ import { Stack, useRouter } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import NetInfo from '@react-native-community/netinfo';
 
-// Keep the splash screen visible while loading
+
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -12,7 +12,7 @@ export default function RootLayout() {
   const { isConnected } = NetInfo.useNetInfo();
 
   useEffect(() => {
-    // 5-second splash screen timer
+   
     const timer = setTimeout(async () => {
       setSplashDone(true);
       await SplashScreen.hideAsync();
@@ -21,7 +21,6 @@ export default function RootLayout() {
   }, []);
 
   useEffect(() => {
-    // Continuous monitoring: redirect if internet status changes
     if (isSplashDone) {
       if (isConnected === false) {
         router.replace('/no-internet');
