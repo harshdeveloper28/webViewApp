@@ -46,7 +46,7 @@ export default function RootLayout() {
     };
   }, []);
 
-  // 4. Global Network Monitor Redirect [web:49][web:50]
+  // 4. Global Network Monitor Redirect 
   useEffect(() => {
     if (appIsReady) {
       if (isConnected === false) {
