@@ -6,7 +6,7 @@ import NetInfo from '@react-native-community/netinfo';
 
 // 1. Hold native splash screen immediately [web:1]
 SplashScreen.preventAutoHideAsync();
-
+// new lkogbjkgf
 export default function RootLayout() {
   const router = useRouter();
   const [appIsReady, setAppIsReady] = useState(false);
